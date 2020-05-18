@@ -19,7 +19,9 @@
           </ul>
         </nav>
       </header>
-      <p class="flash_message"><%= flash[:notice] %></p>
+      <% if flash[:notice] %>
+        <p class="flash_message"><%= flash[:notice] %></p>
+      <% end %>
       <div class="content">
         <%= yield %>
       </div>
