@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
-  root to: "tweets#index"
   end
+  root to: "tweets#index"
 end
