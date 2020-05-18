@@ -1,8 +1,11 @@
+<h1>投稿一覧</h1>
 <% @tweets.each do |tweet| %>
-<div class="container">
+<div class="container clearfix">
   <p class="tweet_content"><%= tweet.content %></p>
   <p class="tweet_created_at"><%= tweet.created_at %></p>
-  <p class="tweet_edit"><%= link_to "編集", edit_tweet_path(tweet.id) %></p>
-  <p class="tweet_edit"><%= link_to "削除", tweet_path(tweet.id), method: :delete %></p>
+  <div class ="tweet_menu clearfix">
+    <%= link_to "編集", edit_tweet_path(tweet.id) %>
+    <%= link_to "削除", tweet_path(tweet.id), method: :delete %>
+    </div>
 </div>
 <% end %>

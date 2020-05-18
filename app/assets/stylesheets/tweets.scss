@@ -5,6 +5,10 @@
   overflow: scroll;
   padding: 70px 0px 100px 0px;
 }
+.wrapper h1 {
+  text-align: center;
+  color:white;
+}
 
 header {
   height: 70px;
@@ -54,7 +58,24 @@ header a {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+  box-shadow: 10px 10px gray;
 }
+
+.tweet_menu {
+  float:right;
+}
+.container a {
+  text-decoration: none;
+  color: black;
+  padding: 0px 10px;
+  float:left;
+}
+
+.tweet_created_at {
+  font-size: 0.7rem;
+  color: gray;
+}
+
 
 footer {
   height: 100px;
@@ -71,4 +92,10 @@ footer p {
   color: white;
   display: table-cell;
   vertical-align: middle;
+}
+
+.clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
 }
