@@ -9,11 +9,15 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(content_params)
-    if @tweet.save
-      redirect_to tweets_path, notice: "新規投稿を作成しました。"
-    else
+    if params[:back]
       render :new
-    end
+    else
+     if @tweet.save
+      redirect_to tweets_path, notice: "新規投稿を作成しました。"
+     else
+      render :new
+     end
+   end
   end
 
   def edit
@@ -33,6 +37,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find_by_id(params[:id])
     @tweet.destroy
     redirect_to tweets_path, notice: "投稿を削除しました。"
+  end
+
+  def confirm
+    @tweet = Tweet.new(content_params)
   end
 
   private

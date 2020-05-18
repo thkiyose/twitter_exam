@@ -1,0 +1,14 @@
+<%= form_with model:@tweet, local:true do |form| %>
+  <div class="container">
+    <div class ="form_wrapper">
+      <p>この内容でよろしいですか？</p>
+      <% @tweet.errors.full_messages.each do |error| %>
+        <%= "エラーがあります:#{error}" %>
+      <% end %>
+      <p class="content_form"><%= form.hidden_field :content %></p>
+      <p><%= @tweet.content %></p>
+      <p class="btn"><%= form.submit "投稿する" %></p>
+    </div>
+    <p class="btn"><%= form.submit "前の画面に戻る", name: 'back' %></p>
+  </div>
+<% end %>

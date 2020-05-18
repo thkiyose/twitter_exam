@@ -106,6 +106,19 @@ footer p {
   border-style: none;
 }
 
+.container button {
+  background-color: #1e90ff;
+  padding: 10px;
+  border-radius: 5px;
+  border-style: none;
+  display: block;
+  cursor: pointer;
+}
+
+.container button a {
+  color:white;
+}
+
 .flash_message {
   background-color: orange;
   color:white;
