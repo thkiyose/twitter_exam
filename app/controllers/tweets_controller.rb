@@ -20,6 +20,15 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find_by_id(params[:id])
   end
 
+  def update
+    @tweet = Tweet.find_by_id(params[:id])
+    if @tweet.update(content_params)
+      redirect_to tweets_path, notice:"投稿を編集しました。"
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @tweet = Tweet.find_by_id(params[:id])
     @tweet.destroy
