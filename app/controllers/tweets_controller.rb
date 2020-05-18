@@ -9,8 +9,11 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(content_params)
-    @tweet.save
-    redirect_to tweets_path
+    if @tweet.save
+      redirect_to tweets_path, notice: "新規投稿を作成しました。"
+    else
+      render :new
+    end
   end
 
   private
