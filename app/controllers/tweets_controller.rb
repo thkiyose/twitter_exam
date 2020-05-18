@@ -16,6 +16,10 @@ class TweetsController < ApplicationController
     end
   end
 
+  def edit
+    @tweet = Tweet.find_by_id(params[:id])
+  end
+
   def destroy
     @tweet = Tweet.find_by_id(params[:id])
     @tweet.destroy
