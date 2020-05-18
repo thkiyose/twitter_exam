@@ -1,0 +1,7 @@
+<%= form_with model:@tweet, local:true do |form| %>
+  <div class="container">
+    <p><%= form.label :content %></p>
+    <p class="content_form"><%= form.text_area :content %></p>
+    <p class="submit_button"><%= form.submit "送信" %></p>
+  </div>
+<% end %>
