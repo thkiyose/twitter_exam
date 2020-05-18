@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TwitterClone</title>
+    <title>TwittercClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <header>
+        <h1 id="header_logo"><%= link_to "TwiClone", tweets_path %></h1>
+        <nav class="header_nav">
+          <ul>
+            <li><%= link_to "新規投稿", new_tweet_path %></li>
+            <li><%= link_to "投稿一覧", tweets_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <footer>
+        <p>Haruka Tezuka, 2020</p>
+    </footer>
+    </div>
   </body>
 </html>
