@@ -2,6 +2,7 @@
 <div class="container">
   <p class="tweet_content"><%= tweet.content %></p>
   <p class="tweet_created_at"><%= tweet.created_at %></p>
-  <p class="edit"><%= link_to '編集', tweet_edit_path %></p>
+  <p class="tweet_edit"><%= link_to "編集", edit_tweet_path(tweet.id) %></p>
+  <p class="tweet_edit"><%= link_to "削除", tweet_path(tweet.id), method: :delete %></p>
 </div>
 <% end %>
