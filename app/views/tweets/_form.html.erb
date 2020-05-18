@@ -1,0 +1,11 @@
+<%= form_with model:@tweet, local:true do |form| %>
+  <div class="container">
+    <div class ="form_wrapper">
+      <% @tweet.errors.full_messages.each do |error| %>
+        <%= "エラーがあります:#{error}" %>
+      <% end %>
+      <p class="content_form"><%= form.text_area :content, size: "40x10" %></p>
+      <p class="btn"><%= form.submit "送信" %></p>
+    </div>
+  </div>
+<% end %>
